@@ -16,7 +16,7 @@ class Node:
 if __name__ == '__main__':
     node_1 = Node(10)
     node_2 = Node(11)
-    node_3 = Node(30)
+    node_3 = Node(50)
     node_4 = Node(15)
     node_1.next = node_2
     node_2.next = node_3

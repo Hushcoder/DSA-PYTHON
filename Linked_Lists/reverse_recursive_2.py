@@ -5,17 +5,12 @@ class Node:
 
     # My solution starts
     @staticmethod
-    def reverseLL(head):
-        if head == None:
-            return None
-        curr = head
-        prev = None
-        while curr != None:
-            ahead = curr.next 
-            curr.next = prev
-            prev = curr
-            curr = ahead
-        return prev
+    def recursiveReverseLL(curr,prev=None):
+        if curr == None:
+            return prev
+        next = curr.next 
+        curr.next = prev 
+        return Node.recursiveReverseLL(next,curr)
 
     # My solution ends 
     @staticmethod
@@ -42,7 +37,7 @@ if __name__ == '__main__':
             tail = node
     print("Linked List : ")
     Node.printlist(head)
-    new_head = Node.reverseLL(head)
+    new_head = Node.recursiveReverseLL(head)
     print("\nModified Linked List : ")
     Node.printlist(new_head) 
     

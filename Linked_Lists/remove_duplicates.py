@@ -3,8 +3,7 @@ class Node:
         self.key = key
         self.next = None
     # My solution starts
-    # using two pointers
-
+   
     @staticmethod
     def removeDuplicates(head):
         if head == None:

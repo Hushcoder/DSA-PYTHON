@@ -10,16 +10,22 @@ class Dll:
         self.size = 0
     
     @staticmethod
-    def deleteHead(head):
+    def reverseLL(head):
+        curr = head
         if head == None:
             return None 
-        curr = head.next 
-        if curr == None:
+        if head.next == None:
             return None
-        head.next = None 
-        curr.prev = None 
-        return curr
-    
+        #swap the links 
+        curr = head 
+        prev = None 
+        while curr != None:
+            prev = curr
+            curr.next, curr.prev = curr.prev, curr.next 
+            curr = curr.prev
+        return prev 
+
+        
     @staticmethod 
     def printDll(head):
         curr = head
@@ -48,7 +54,7 @@ if __name__ == '__main__' :
           tail.prev = prev_con
 
    doublyll = Dll()
-   new_head = doublyll.deleteHead(head)
+   new_head = doublyll.reverseLL(head)
    Dll.printDll(new_head)
 
     
